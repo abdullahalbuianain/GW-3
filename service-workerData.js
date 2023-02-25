@@ -11,12 +11,12 @@ var cachedFiles = [
   'assets/192x192.png',
   'assets/512x512.png',
   
-];
+]
 
 self.addEventListener('install', function(event) {
+  console.log("[Service Worker] Install");
     event.waitUntil(
       caches.open(cachName).then(function(cache) {
-          console.log('Opened cache');
           return cache.addAll(cachedFiles);
         })
     );
