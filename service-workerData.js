@@ -1,6 +1,7 @@
 var cachName = 'lesson-booking-PWA';
 var cachedFiles = [
   'index.html',
+  'data.js',
   'assets/style.css',
   'assets/english.jpg',
   'assets/math.jpg',

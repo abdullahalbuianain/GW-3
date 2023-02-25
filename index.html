@@ -22,12 +22,11 @@
         <header>
             <h1 v-text='sitename' class="header"></h1>
           
-            <button disabled='disabled' v-if='this.cart < [0]' class="disabledButton"><span class='fas fa-shopping-cart'></span>Checkout</button>
-            <button @click='showCheckout' v-else  class="addButtonStyle">{{this.cart.length}}<span class='fas fa-shopping-cart'></span>Checkout</button>
+
+            <button @click='showCheckout'  class="addButtonStyle">{{this.cart.length}}<span class='fas fa-shopping-cart'></span>Checkout</button>
            
             <button @click="sortLessons('subject')" class="addButtonStyle">Sort by Subject</button>
             <button @click="sortLessons('location')" class="addButtonStyle">Sort by Location</button>
-            <button @click="sortLessons('price')" class="addButtonStyle">Sort by Price</button>
             
 
 
@@ -44,7 +43,7 @@
             <h3>Subject: {{lesson.subject}}</h3>
             <p>Location: {{lesson.location}}</p>
             <p>Spaces available: {{lesson.spaces}}</p>
-            <p>Price: {{lesson.price}}</p>
+            <p>Price:£ {{lesson.price}}</p>
             </div>
 
             <template v-if="canAddToCart(lesson)">
@@ -89,7 +88,7 @@
                 <h3>Subject: {{lesson.subject}}</h3>
                 <p>Location: {{lesson.location}}</p>
                 <p>Spaces available: {{lesson.spaces}}</p>
-                <p>Price:$ {{lesson.price}}</p>
+                <p>Price:£ {{lesson.price}}</p>
                 </div>
 
                 <button v-on:click="removeFromCart" class="addButtonStyle">Remove from cart</button>
